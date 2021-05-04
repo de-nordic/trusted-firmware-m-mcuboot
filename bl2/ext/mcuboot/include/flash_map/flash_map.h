@@ -102,6 +102,26 @@ struct flash_area {
     uint32_t fa_size;
 };
 
+inline uint8_t flash_area_get_id(const struct flash_area *fa)
+{
+	return fa->fa_id;
+}
+
+inline uint8_t flash_area_get_device_id(const struct flash_area *fa)
+{
+	return fa->fa_device_id;
+}
+
+inline uint32_t flash_area_get_off(const struct flash_area *fa)
+{
+	return fa->fa_off;
+}
+
+inline uint32_t flash_area_get_size(const struct flash_area *fa)
+{
+	return fa->fa_size;
+}
+
 /**
  * @brief Structure describing a sector within a flash area.
  *
@@ -120,6 +140,16 @@ struct flash_sector {
      */
     uint32_t fs_size;
 };
+
+inline uint32_t flash_sector_get_off(const struct flash_sector *fs)
+{
+	return fs->fs_off;
+}
+
+inline uint32_t flash_sector_get_size(const struct flash_sector *fs)
+{
+	return fs->fs_size;
+}
 
 /*
  * Start using flash area.
